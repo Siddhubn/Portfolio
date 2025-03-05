@@ -57,7 +57,7 @@ navLinks.forEach(link => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const text = "Here you can explore my skills, projects, and certifications."; // Add your text here
+    const text = "Hi, Am Siddharth a Tech Enthusiast | Web Developer | Full Stack Developer | Data Analyst | Always open towards new Challenges | Believes in Practical Experience over Theorotical Knowledge. ";
     const typedText = document.getElementById("typed-text");
     const cursor = document.querySelector(".cursor");
 
@@ -67,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (index < text.length) {
             typedText.textContent += text[index];
             index++;
-            setTimeout(type, 50); // Typing speed (ms per character)
+            setTimeout(type, 50);
         } else {
-            cursor.style.display = "none"; // Hide cursor when typing is complete
+            cursor.style.display = "none";
         }
     }
 

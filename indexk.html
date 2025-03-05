@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth | Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="hosad-css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Graduate&family=Jost:ital,wght@0,100..900;1,100..900&family=Lexend+Deca:wght@100..900&family=Moon+Dance&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">SIDD</div>
+        <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Siddharth B N</span></h1>
+            <p>A passionate <strong>Software developer</strong> with expertise in <strong>Web Development, AI&ML , Cybersecurity, Python coder.</strong><br><br>Passionate about Coding, Security, and Innovation <br>
+                —Constantly Learning and Evolving. <br></p>
+            <p><span id="typed"></span></p>
+            <div class="resume-download">
+                <a href="resume.pdf" download="YourName_Resume.pdf">
+                    <button class="download-btn">📄 Resume</button>
+                </a>
+            </div> 
+        </div>
+        <img src="C:\portfolio\passport size photo.jpg" alt="Your Profile Image" class="profile-image">       
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">Django</div>
+            <div class="skill-item">Flask</div>
+            <div class="skill-item">SQL</div>
+            <div class="skill-item">AWS</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Parkit</h3>
+                <p>A parking slot reservation system web app built using Django.</p>
+            </div>
+            <div class="project-card">
+                <h3>SnapSpace</h3>
+                <p>An image gallery web app built using Flask.</p>
+            </div>
+            <div class="project-card">
+                <h3>CyberSec Chatbot Game</h3>
+                <p>A game where users try to make a chatbot say a word without using certain taboo words.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a software developer with experience in full-stack web development, AI, and cybersecurity. 
+            Passionate about creating innovative solutions and engaging applications.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        function toggleTheme() {
+        const body = document.body;
+        const toggleButton = document.querySelector(".theme-toggle");
+
+        body.classList.toggle("light-mode");
+
+        // Change emoji based on the mode
+        if (body.classList.contains("light-mode")) {
+            toggleButton.textContent = "🌙"; // Light mode icon
+        } else {
+            toggleButton.textContent = "☀️"; // Dark mode icon
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("section-visible");
+                } else {
+                    entry.target.classList.remove("section-visible"); // Optional: remove class if scrolled out
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        new Typed("#typed", {
+            strings: [
+                "Love to Code 💘",
+                "Software Developer 👨‍💻",
+                "Full-Stack Engineer ⚙️",
+                "Cybersecurity Enthusiast 🔒",
+                "Machine Learning Engineer 🤖",
+                "Always curious in knowing the LOGIC in every single MAGIC 🪄",
+                "Web Developer 🕸️",
+                "AI Researcher ℹ️",
+                "Freelancer 🦸‍♂️",
+                "Open-Source Contributor 🦸‍♂️",
+                "Cinematographer 🎥",
+                "Tech Enthusiast 🔊",
+            ],
+            typeSpeed: 50, // Speed of typing
+            backSpeed: 40, // Speed of erasing
+            backDelay: 1000, // Delay before starting to erase
+            startDelay: 500, // Delay before typing starts
+            loop: true // Infinite loop
+        });
+    });
+    </script>
+
+</body>
+</html>
